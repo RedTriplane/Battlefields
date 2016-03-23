@@ -1,5 +1,6 @@
 package com.jfixby.r3.ext.api.maze;
 
+import com.jfixby.cmns.api.ComponentInstaller;
 
 public class Maze {
 

@@ -18,6 +18,7 @@
 	<classpathentry combineaccessrules="false" kind="src" path="/jfixby-util-maze-red"/>
 	<classpathentry combineaccessrules="false" kind="src" path="/jfixby-util-p18-api"/>
 	<classpathentry combineaccessrules="false" kind="src" path="/jfixby-util-p18-red"/>
+	<classpathentry combineaccessrules="false" kind="src" path="/rana-asset-red"/>
 	<classpathentry combineaccessrules="false" kind="src" path="/jfixby-util-terrain-api"/>
 	<classpathentry combineaccessrules="false" kind="src" path="/jfixby-util-terrain-red"/>
 	<classpathentry combineaccessrules="false" kind="src" path="/apache-jfixby-cmns"/>

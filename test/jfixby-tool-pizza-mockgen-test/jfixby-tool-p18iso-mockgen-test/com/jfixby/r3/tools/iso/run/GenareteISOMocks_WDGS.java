@@ -89,7 +89,7 @@ public class GenareteISOMocks_WDGS {
 	    packed.add(asset_id);
 	}
 
-	String data = Json.serializeToString(struct);
+	String data = Json.serializeToString(struct).toString();
 	package_root_file.writeString(data);
 
 	PackageUtils.producePackageDescriptor(package_folder, Scene2DPackage.SCENE2D_PACKAGE_FORMAT, "1.0", packed,

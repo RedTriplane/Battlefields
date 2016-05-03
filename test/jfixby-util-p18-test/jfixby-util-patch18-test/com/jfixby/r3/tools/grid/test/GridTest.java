@@ -8,7 +8,7 @@ import com.jfixby.r3.ext.api.patch18.GridSpecs;
 import com.jfixby.r3.ext.api.patch18.P18;
 import com.jfixby.r3.ext.api.patch18.grid.GridBrush;
 import com.jfixby.r3.ext.api.patch18.grid.GridBrushApplicationResult;
-import com.jfixby.red.desktop.DesktopAssembler;
+import com.jfixby.red.desktop.DesktopSetup;
 import com.jfixby.red.util.md5.AlpaeroMD5;
 import com.jfixby.util.patch18.red.RedP18;
 
@@ -16,7 +16,7 @@ public class GridTest {
 
 	public static void main(String[] args) {
 
-		DesktopAssembler.setup();
+		DesktopSetup.deploy();
 
 		MD5.installComponent(new AlpaeroMD5());
 		P18.installComponent(new RedP18());

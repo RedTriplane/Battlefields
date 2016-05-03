@@ -21,7 +21,7 @@ import com.jfixby.r3.tools.api.iso.IsoMockPaletteGenerator;
 import com.jfixby.r3.tools.api.iso.IsoMockPaletteResult;
 import com.jfixby.r3.tools.iso.red.RedIsoMockPaletteGenerator2;
 import com.jfixby.rana.api.pkg.fs.PackageDescriptor;
-import com.jfixby.red.desktop.DesktopAssembler;
+import com.jfixby.red.desktop.DesktopSetup;
 import com.jfixby.red.engine.core.resources.PackageUtils;
 import com.jfixby.tools.gdx.texturepacker.api.AtlasPackingResult;
 import com.jfixby.tools.gdx.texturepacker.api.Packer;
@@ -33,7 +33,7 @@ import com.jfixby.util.iso.red.RedIsometry;
 public class GenareteISOMocks_WDGS {
 
     public static void main(String[] args) throws IOException {
-	DesktopAssembler.setup();
+	DesktopSetup.deploy();
 
 	Isometry.installComponent(new RedIsometry());
 	// IsoMockPaletteGenerator

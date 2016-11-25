@@ -2,7 +2,7 @@ package com.jfixby.r3.tools.iso.run;
 
 import java.io.IOException;
 
-import com.jfixby.cmns.api.assets.AssetID;
+import com.jfixby.cmns.api.assets.ID;
 import com.jfixby.cmns.api.assets.Names;
 import com.jfixby.cmns.api.collections.Collection;
 import com.jfixby.cmns.api.collections.Collections;
@@ -79,13 +79,13 @@ public class GenareteISOMocks_WDGS {
 	package_content_folder.makeFolder();
 	File package_root_file = package_content_folder.child(file_name);
 
-	List<AssetID> packed = Collections.newList();
+	List<ID> packed = Collections.newList();
 
-	Collection<AssetID> dependencies = result.getAssetsUsed();
+	Collection<ID> dependencies = result.getAssetsUsed();
 
 	for (int i = 0; i < struct.structures.size(); i++) {
 	    SceneStructure structure = struct.structures.get(i);
-	    AssetID asset_id = Names.newAssetID(structure.structure_name);
+	    ID asset_id = Names.newAssetID(structure.structure_name);
 	    packed.add(asset_id);
 	}
 
@@ -123,7 +123,7 @@ public class GenareteISOMocks_WDGS {
 	File altas_file = atlas_result.getAtlasOutputFile();
 	String atlas_name = altas_file.getName();
 
-	Collection<AssetID> packed = atlas_result.listPackedAssets();
+	Collection<ID> packed = atlas_result.listPackedAssets();
 	packed.print("packed");
 
 	PackageUtils.producePackageDescriptor(package_folder, StandardPackageFormats.libGDX.Atlas, "1.0", packed,

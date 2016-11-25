@@ -1,6 +1,6 @@
 package com.jfixby.util.p18t.api;
 
-import com.jfixby.cmns.api.assets.AssetID;
+import com.jfixby.cmns.api.assets.ID;
 import com.jfixby.cmns.api.collections.Collection;
 import com.jfixby.cmns.api.collections.Mapping;
 import com.jfixby.cmns.api.floatn.Float2;
@@ -14,7 +14,7 @@ import com.jfixby.r3.ext.api.patch18.palette.RelationsList;
 import com.jfixby.util.terain.test.api.palette.TerrainPalette;
 
 public interface P18TerrainPalette {
-	AssetID getPaletteNamespace();
+	ID getPaletteNamespace();
 
 	GameMeter getBlockXWidth();
 
@@ -30,7 +30,7 @@ public interface P18TerrainPalette {
 
 	Mapping<FabricsRelation, Float2> getRelationRelativeCenters();
 
-	AssetID getNamespace();
+	ID getNamespace();
 
 	P18TerrainTypeVariationsList listVariationsFor(Patch18 shape,
 			Fabric upperFabric, Fabric lowerFabric);

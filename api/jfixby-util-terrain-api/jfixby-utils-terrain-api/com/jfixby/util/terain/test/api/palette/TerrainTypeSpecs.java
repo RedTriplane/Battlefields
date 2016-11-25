@@ -1,13 +1,13 @@
 package com.jfixby.util.terain.test.api.palette;
 
-import com.jfixby.cmns.api.assets.AssetID;
+import com.jfixby.cmns.api.assets.ID;
 import com.jfixby.cmns.api.gamedev.GameMeter;
 
 public interface TerrainTypeSpecs {
 
-	void setName(AssetID name);
+	void setName(ID name);
 
-	AssetID getName();
+	ID getName();
 
 	void setZHeight(GameMeter block_z_height);
 

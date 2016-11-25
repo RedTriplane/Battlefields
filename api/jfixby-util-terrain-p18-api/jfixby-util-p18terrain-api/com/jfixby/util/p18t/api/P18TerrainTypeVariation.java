@@ -1,6 +1,6 @@
 package com.jfixby.util.p18t.api;
 
-import com.jfixby.cmns.api.assets.AssetID;
+import com.jfixby.cmns.api.assets.ID;
 import com.jfixby.r3.ext.api.patch18.Patch18;
 import com.jfixby.r3.ext.api.patch18.palette.FabricsRelation;
 import com.jfixby.util.terain.test.api.palette.TerrainType;
@@ -11,7 +11,7 @@ public interface P18TerrainTypeVariation {
 
 	public String getName();
 
-	public AssetID getID();
+	public ID getID();
 
 	public Patch18 getShape();
 

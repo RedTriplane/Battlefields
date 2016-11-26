@@ -30,7 +30,7 @@ public class WDGS_P18Terrain_Palette {
 				.getRelation(2), 0.3f, 0.8f);
 
 		specs.setPaletteNamespace(Names
-				.newAssetID("com.jfixby.r3.iso.test.wdgs"));
+				.newID("com.jfixby.r3.iso.test.wdgs"));
 		specs.setP18Palette(P18_PALETTE);
 		P18_TERRAIN_PALETTE = factory.newP18TerrainPalette(specs);
 	}

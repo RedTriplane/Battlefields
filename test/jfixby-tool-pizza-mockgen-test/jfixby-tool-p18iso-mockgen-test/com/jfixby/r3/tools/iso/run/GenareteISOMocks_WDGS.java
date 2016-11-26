@@ -85,7 +85,7 @@ public class GenareteISOMocks_WDGS {
 
 	for (int i = 0; i < struct.structures.size(); i++) {
 	    SceneStructure structure = struct.structures.get(i);
-	    ID asset_id = Names.newAssetID(structure.structure_name);
+	    ID asset_id = Names.newID(structure.structure_name);
 	    packed.add(asset_id);
 	}
 

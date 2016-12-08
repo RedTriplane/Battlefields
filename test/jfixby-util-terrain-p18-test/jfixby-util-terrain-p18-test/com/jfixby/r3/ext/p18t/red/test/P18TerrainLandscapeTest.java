@@ -1,7 +1,7 @@
 package com.jfixby.r3.ext.p18t.red.test;
 
+import com.jfixby.cmns.api.desktop.DesktopSetup;
 import com.jfixby.examples.wdgs.WDGS_P18Terrain_Palette;
-import com.jfixby.red.desktop.DesktopSetup;
 import com.jfixby.util.p18t.api.P18Landscape;
 import com.jfixby.util.p18t.api.P18LandscapeBrush;
 import com.jfixby.util.p18t.api.P18LandscapeFactory;

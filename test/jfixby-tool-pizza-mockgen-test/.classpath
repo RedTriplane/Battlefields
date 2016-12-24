@@ -2,9 +2,9 @@
 <classpath>
 	<classpathentry kind="src" path="jfixby-tool-p18iso-mockgen-test"/>
 	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER/org.eclipse.jdt.internal.debug.ui.launcher.StandardVMType/JavaSE-1.8"/>
-	<classpathentry combineaccessrules="false" kind="src" path="/jfixby-cmns-api"/>
-	<classpathentry combineaccessrules="false" kind="src" path="/jfixby-cmns-red"/>
-	<classpathentry combineaccessrules="false" kind="src" path="/jfixby-cmns-red-desktop"/>
+	<classpathentry combineaccessrules="false" kind="src" path="/scarabei-api"/>
+	<classpathentry combineaccessrules="false" kind="src" path="/scarabei-red"/>
+	<classpathentry combineaccessrules="false" kind="src" path="/scarabei-red-desktop"/>
 	<classpathentry combineaccessrules="false" kind="src" path="/jfixby-tool-pizza-mockgen-api"/>
 	<classpathentry combineaccessrules="false" kind="src" path="/jfixby-tool-pizza-mockgen-red"/>
 	<classpathentry combineaccessrules="false" kind="src" path="/jfixby-tool-texture-bleed-api"/>
@@ -21,8 +21,8 @@
 	<classpathentry combineaccessrules="false" kind="src" path="/rana-asset-red"/>
 	<classpathentry combineaccessrules="false" kind="src" path="/jfixby-util-terrain-api"/>
 	<classpathentry combineaccessrules="false" kind="src" path="/jfixby-util-terrain-red"/>
-	<classpathentry combineaccessrules="false" kind="src" path="/apache-jfixby-cmns"/>
-	<classpathentry combineaccessrules="false" kind="src" path="/jfixby-cmns-red-gdx"/>
+	<classpathentry combineaccessrules="false" kind="src" path="/scarabei-apache-cmns"/>
+	<classpathentry combineaccessrules="false" kind="src" path="/scarabei-red-gdx"/>
 	<classpathentry combineaccessrules="false" kind="src" path="/jfixby-util-wdgs"/>
 	<classpathentry combineaccessrules="false" kind="src" path="/jfixby-util-terrain-p18-api"/>
 	<classpathentry combineaccessrules="false" kind="src" path="/jfixby-util-terrain-p18-red"/>

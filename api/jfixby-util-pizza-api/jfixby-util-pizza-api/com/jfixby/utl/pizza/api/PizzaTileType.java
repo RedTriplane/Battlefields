@@ -1,6 +1,6 @@
 package com.jfixby.utl.pizza.api;
 
-import com.jfixby.cmns.api.assets.ID;
+import com.jfixby.scarabei.api.assets.ID;
 
 public interface PizzaTileType {
 

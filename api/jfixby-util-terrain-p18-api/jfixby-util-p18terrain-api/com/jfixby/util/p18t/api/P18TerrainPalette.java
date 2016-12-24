@@ -1,16 +1,16 @@
 package com.jfixby.util.p18t.api;
 
-import com.jfixby.cmns.api.assets.ID;
-import com.jfixby.cmns.api.collections.Collection;
-import com.jfixby.cmns.api.collections.Mapping;
-import com.jfixby.cmns.api.floatn.Float2;
-import com.jfixby.cmns.api.gamedev.GameMeter;
 import com.jfixby.r3.ext.api.patch18.P18Palette;
 import com.jfixby.r3.ext.api.patch18.Patch18;
 import com.jfixby.r3.ext.api.patch18.palette.Fabric;
 import com.jfixby.r3.ext.api.patch18.palette.FabricsList;
 import com.jfixby.r3.ext.api.patch18.palette.FabricsRelation;
 import com.jfixby.r3.ext.api.patch18.palette.RelationsList;
+import com.jfixby.scarabei.api.assets.ID;
+import com.jfixby.scarabei.api.collections.Collection;
+import com.jfixby.scarabei.api.collections.Mapping;
+import com.jfixby.scarabei.api.floatn.Float2;
+import com.jfixby.scarabei.api.gamedev.GameMeter;
 import com.jfixby.util.terain.test.api.palette.TerrainPalette;
 
 public interface P18TerrainPalette {

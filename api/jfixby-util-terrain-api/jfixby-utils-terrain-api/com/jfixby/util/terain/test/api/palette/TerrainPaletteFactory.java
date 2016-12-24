@@ -1,6 +1,6 @@
 package com.jfixby.util.terain.test.api.palette;
 
-import com.jfixby.cmns.api.gamedev.GameMeter;
+import com.jfixby.scarabei.api.gamedev.GameMeter;
 
 public interface TerrainPaletteFactory {
 

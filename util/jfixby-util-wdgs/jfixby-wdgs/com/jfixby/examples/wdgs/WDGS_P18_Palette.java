@@ -1,7 +1,5 @@
 package com.jfixby.examples.wdgs;
 
-import com.jfixby.cmns.api.collections.Collections;
-import com.jfixby.cmns.api.collections.List;
 import com.jfixby.r3.ext.api.patch18.P18;
 import com.jfixby.r3.ext.api.patch18.P18Palette;
 import com.jfixby.r3.ext.api.patch18.P18PaletteFactory;
@@ -9,6 +7,8 @@ import com.jfixby.r3.ext.api.patch18.PaletteSpecs;
 import com.jfixby.r3.ext.api.patch18.palette.Fabric;
 import com.jfixby.r3.ext.api.patch18.palette.FabricSpecs;
 import com.jfixby.r3.ext.api.patch18.palette.FabricsRelation;
+import com.jfixby.scarabei.api.collections.Collections;
+import com.jfixby.scarabei.api.collections.List;
 
 public class WDGS_P18_Palette {
 	public static final String FABRIC_NAME_WATER = "water";

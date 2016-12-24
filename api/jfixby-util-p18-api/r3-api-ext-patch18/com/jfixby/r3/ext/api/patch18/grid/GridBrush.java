@@ -1,7 +1,7 @@
 package com.jfixby.r3.ext.api.patch18.grid;
 
-import com.jfixby.cmns.api.math.FixedInt2;
 import com.jfixby.r3.ext.api.patch18.palette.Fabric;
+import com.jfixby.scarabei.api.math.FixedInt2;
 
 public interface GridBrush {
 

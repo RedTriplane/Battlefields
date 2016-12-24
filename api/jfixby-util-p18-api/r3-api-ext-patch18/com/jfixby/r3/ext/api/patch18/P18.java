@@ -1,6 +1,6 @@
 package com.jfixby.r3.ext.api.patch18;
 
-import com.jfixby.cmns.api.ComponentInstaller;
+import com.jfixby.scarabei.api.ComponentInstaller;
 
 public class P18 {
 

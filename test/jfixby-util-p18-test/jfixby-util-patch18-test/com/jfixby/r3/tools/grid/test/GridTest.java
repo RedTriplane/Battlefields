@@ -1,7 +1,5 @@
 package com.jfixby.r3.tools.grid.test;
 
-import com.jfixby.cmns.api.desktop.DesktopSetup;
-import com.jfixby.cmns.api.md5.MD5;
 import com.jfixby.examples.wdgs.WDGS_P18_Palette;
 import com.jfixby.r3.ext.api.patch18.Grid;
 import com.jfixby.r3.ext.api.patch18.GridFactory;
@@ -9,7 +7,9 @@ import com.jfixby.r3.ext.api.patch18.GridSpecs;
 import com.jfixby.r3.ext.api.patch18.P18;
 import com.jfixby.r3.ext.api.patch18.grid.GridBrush;
 import com.jfixby.r3.ext.api.patch18.grid.GridBrushApplicationResult;
-import com.jfixby.red.util.md5.RSADataSecurityIncMD5;
+import com.jfixby.scarabei.api.desktop.DesktopSetup;
+import com.jfixby.scarabei.api.md5.MD5;
+import com.jfixby.scarabei.red.util.md5.RSADataSecurityIncMD5;
 import com.jfixby.util.patch18.red.RedP18;
 
 public class GridTest {

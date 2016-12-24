@@ -1,7 +1,7 @@
 package com.jfixby.utl.pizza.api;
 
-import com.jfixby.cmns.api.floatn.FixedFloat2;
 import com.jfixby.r3.ext.api.patch18.palette.Fabric;
+import com.jfixby.scarabei.api.floatn.FixedFloat2;
 
 public interface PizzaBrush {
 

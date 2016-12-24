@@ -1,6 +1,6 @@
 package com.jfixby.util.p18t.api;
 
-import com.jfixby.cmns.api.ComponentInstaller;
+import com.jfixby.scarabei.api.ComponentInstaller;
 
 public class P18Terrain {
 

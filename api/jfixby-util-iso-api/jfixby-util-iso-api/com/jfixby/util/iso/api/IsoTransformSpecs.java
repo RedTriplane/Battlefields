@@ -1,6 +1,6 @@
 package com.jfixby.util.iso.api;
 
-import com.jfixby.cmns.api.math.Angle;
+import com.jfixby.scarabei.api.math.Angle;
 
 public interface IsoTransformSpecs {
 	void setPixelsToGameMeter(double pixelsToGameMeter);

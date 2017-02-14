@@ -1,7 +1,7 @@
 package com.jfixby.r3.ext.api.patch18.grid;
 
 import com.jfixby.r3.ext.api.patch18.palette.Fabric;
-import com.jfixby.scarabei.api.math.FixedInt2;
+import com.jfixby.scarabei.api.math.ReadOnlyInt2;
 
 public interface GridBrush {
 
@@ -23,6 +23,6 @@ public interface GridBrush {
 
 	void applyPaintAtCell(long cell_x, long cell_y);
 
-	void applyPaintAtCell(FixedInt2 cell_xy);
+	void applyPaintAtCell(ReadOnlyInt2 cell_xy);
 
 }

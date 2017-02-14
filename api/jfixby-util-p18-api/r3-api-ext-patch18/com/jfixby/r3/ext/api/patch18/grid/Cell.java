@@ -2,7 +2,7 @@ package com.jfixby.r3.ext.api.patch18.grid;
 
 import com.jfixby.r3.ext.api.patch18.Patch18;
 import com.jfixby.r3.ext.api.patch18.palette.Fabric;
-import com.jfixby.scarabei.api.math.FixedInt2;
+import com.jfixby.scarabei.api.math.ReadOnlyInt2;
 
 public interface Cell {
 
@@ -12,6 +12,6 @@ public interface Cell {
 
 	public Fabric getLowerFabric();
 
-	public FixedInt2 getPosition();
+	public ReadOnlyInt2 getPosition();
 
 }

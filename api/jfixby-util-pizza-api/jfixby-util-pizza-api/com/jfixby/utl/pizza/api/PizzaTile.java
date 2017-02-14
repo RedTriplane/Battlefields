@@ -1,11 +1,11 @@
 package com.jfixby.utl.pizza.api;
 
-import com.jfixby.scarabei.api.floatn.FixedFloat2;
+import com.jfixby.scarabei.api.floatn.ReadOnlyFloat2;
 
 public interface PizzaTile {
 
 	PizzaTileType getType();
 
-	FixedFloat2 getCanvasPosition();
+	ReadOnlyFloat2 getCanvasPosition();
 
 }

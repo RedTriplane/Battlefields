@@ -1,15 +1,15 @@
 package com.jfixby.utl.pizza.api;
 
-import com.jfixby.scarabei.api.floatn.FixedFloat2;
+import com.jfixby.scarabei.api.floatn.ReadOnlyFloat2;
 
 public interface LandscapeActiveArea {
 
-	FixedFloat2 getTopLeftCorner();
+	ReadOnlyFloat2 getTopLeftCorner();
 
-	FixedFloat2 getTopRightCorner();
+	ReadOnlyFloat2 getTopRightCorner();
 
-	FixedFloat2 getBottomLeftCorner();
+	ReadOnlyFloat2 getBottomLeftCorner();
 
-	FixedFloat2 getBottomRightCorner();
+	ReadOnlyFloat2 getBottomRightCorner();
 
 }

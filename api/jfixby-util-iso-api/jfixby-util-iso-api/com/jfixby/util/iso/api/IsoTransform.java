@@ -2,8 +2,8 @@ package com.jfixby.util.iso.api;
 
 import com.jfixby.scarabei.api.collections.Collection;
 import com.jfixby.scarabei.api.collections.EditableCollection;
-import com.jfixby.scarabei.api.floatn.FixedFloat2;
-import com.jfixby.scarabei.api.floatn.FixedFloat3;
+import com.jfixby.scarabei.api.floatn.ReadOnlyFloat2;
+import com.jfixby.scarabei.api.floatn.ReadOnlyFloat3;
 import com.jfixby.scarabei.api.floatn.Float2;
 import com.jfixby.scarabei.api.floatn.Float3;
 
@@ -19,15 +19,15 @@ public interface IsoTransform {
 
 	double getPixelsToGameMeter();
 
-	void project3Dto2D(FixedFloat3 input, Float2 output);
+	void project3Dto2D(ReadOnlyFloat3 input, Float2 output);
 
-	void unproject2Dto3D(FixedFloat2 input_2d, double missing_default_z,
+	void unproject2Dto3D(ReadOnlyFloat2 input_2d, double missing_default_z,
 			Float3 output_3d);
 
-	void unproject2Dto3D(Collection<FixedFloat2> input_2d,
+	void unproject2Dto3D(Collection<ReadOnlyFloat2> input_2d,
 			double missing_default_z, EditableCollection<Float3> output_3d);
 
-	void project3Dto2D(Collection<? extends FixedFloat3> input,
+	void project3Dto2D(Collection<? extends ReadOnlyFloat3> input,
 			EditableCollection<Float2> output);
 
 }

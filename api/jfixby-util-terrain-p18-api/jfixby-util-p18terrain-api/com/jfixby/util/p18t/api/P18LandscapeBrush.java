@@ -1,7 +1,7 @@
 package com.jfixby.util.p18t.api;
 
 import com.jfixby.r3.ext.api.patch18.palette.Fabric;
-import com.jfixby.scarabei.api.floatn.FixedFloat3;
+import com.jfixby.scarabei.api.floatn.ReadOnlyFloat3;
 
 public interface P18LandscapeBrush {
 
@@ -10,7 +10,7 @@ public interface P18LandscapeBrush {
 	P18LandscapePointer pointAt(double terrain_x, double terrain_y,
 			double terrain_z);
 
-	P18LandscapePointer pointAt(FixedFloat3 terrain_xyz);
+	P18LandscapePointer pointAt(ReadOnlyFloat3 terrain_xyz);
 
 	void applyPaint();
 

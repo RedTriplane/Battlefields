@@ -1,7 +1,7 @@
 package com.jfixby.r3.ext.p18t.red.test;
 
 import com.jfixby.examples.wdgs.WDGS_P18Terrain_Palette;
-import com.jfixby.scarabei.api.desktop.DesktopSetup;
+import com.jfixby.scarabei.api.desktop.ScarabeiDesktop;
 import com.jfixby.util.p18t.api.P18Landscape;
 import com.jfixby.util.p18t.api.P18LandscapeBrush;
 import com.jfixby.util.p18t.api.P18LandscapeFactory;
@@ -13,7 +13,7 @@ import com.jfixby.util.p18t.api.P18TerrainPalette;
 public class P18TerrainLandscapeTest {
 
 	public static void main(String[] args) {
-		DesktopSetup.deploy();
+		ScarabeiDesktop.deploy();
 
 		P18LandscapeFactory landscape_factory = P18Terrain.invoke().getP18LandscapeFactory();
 

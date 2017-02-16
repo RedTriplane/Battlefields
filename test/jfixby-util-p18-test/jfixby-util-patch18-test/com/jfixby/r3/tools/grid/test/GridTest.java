@@ -7,7 +7,7 @@ import com.jfixby.r3.ext.api.patch18.GridSpecs;
 import com.jfixby.r3.ext.api.patch18.P18;
 import com.jfixby.r3.ext.api.patch18.grid.GridBrush;
 import com.jfixby.r3.ext.api.patch18.grid.GridBrushApplicationResult;
-import com.jfixby.scarabei.api.desktop.DesktopSetup;
+import com.jfixby.scarabei.api.desktop.ScarabeiDesktop;
 import com.jfixby.scarabei.api.md5.MD5;
 import com.jfixby.scarabei.red.util.md5.RSADataSecurityIncMD5;
 import com.jfixby.util.patch18.red.RedP18;
@@ -16,7 +16,7 @@ public class GridTest {
 
 	public static void main(String[] args) {
 
-		DesktopSetup.deploy();
+		ScarabeiDesktop.deploy();
 
 		MD5.installComponent(new RSADataSecurityIncMD5());
 		P18.installComponent(new RedP18());

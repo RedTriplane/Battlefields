@@ -1,7 +1,7 @@
 package com.jfixby.util.terain.test;
 
 import com.jfixby.examples.wdgs.WDGS_P18Terrain_Palette;
-import com.jfixby.scarabei.api.desktop.DesktopSetup;
+import com.jfixby.scarabei.api.desktop.ScarabeiDesktop;
 import com.jfixby.scarabei.api.math.Int2;
 import com.jfixby.scarabei.api.math.IntegerMath;
 import com.jfixby.util.terain.test.api.landscape.Landscape;
@@ -13,7 +13,7 @@ import com.jfixby.util.terain.test.api.palette.TerrainPalette;
 public class LandscapeTest {
 
 	public static void main(String[] args) {
-		DesktopSetup.deploy();
+		ScarabeiDesktop.deploy();
 
 		LandscapeFactory factory = Terrain.getLandscapeFactory();
 

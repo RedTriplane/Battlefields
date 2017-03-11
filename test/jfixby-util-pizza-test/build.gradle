@@ -1,0 +1,36 @@
+apply plugin: "java"
+apply plugin: "maven"
+
+sourceCompatibility = 1.8
+[compileJava, compileTestJava]*.options*.encoding = 'UTF-8'
+
+
+dependencies {
+      compile project(":jfixby-util-iso-api")
+      compile project(":jfixby-util-iso-red")
+      compile project(":jfixby-util-p18-api")
+      compile project(":jfixby-util-p18-red")
+      compile project(":jfixby-util-pizza-api")
+      compile project(":jfixby-util-pizza-red")
+      compile project(":jfixby-util-terrain-api")
+      compile project(":jfixby-util-terrain-p18-api")
+      compile project(":jfixby-util-terrain-p18-red")
+      compile project(":jfixby-util-terrain-red")
+      compile project(":jfixby-util-wdgs")
+      compile project(":scarabei-apache-cmns")
+      compile project(":scarabei-api")
+      compile project(":scarabei-red")
+      compile project(":scarabei-red-desktop")
+      compile project(":scarabei-red-gdx")
+}
+
+sourceSets {
+    main {
+        java {
+            srcDirs = ['jfixby-util-pizza-test/']
+        }
+        resources {
+            
+        }
+    }
+}

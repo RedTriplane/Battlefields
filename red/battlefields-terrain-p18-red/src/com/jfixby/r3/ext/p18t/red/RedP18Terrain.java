@@ -12,12 +12,12 @@ public class RedP18Terrain implements P18TerrainComponent {
 
 	@Override
 	public P18TerrainPaletteFactory getP18TerrainPaletteFactory () {
-		return palette_fac;
+		return this.palette_fac;
 	}
 
 	@Override
 	public P18LandscapeFactory getP18LandscapeFactory () {
-		return landscape_fac;
+		return this.landscape_fac;
 	}
 
 }

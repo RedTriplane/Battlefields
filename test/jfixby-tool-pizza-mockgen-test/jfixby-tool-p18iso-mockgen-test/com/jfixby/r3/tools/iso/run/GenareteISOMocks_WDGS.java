@@ -1,3 +1,4 @@
+
 package com.jfixby.r3.tools.iso.run;
 
 import java.io.IOException;
@@ -32,103 +33,103 @@ import com.jfixby.util.iso.red.RedIsometry;
 
 public class GenareteISOMocks_WDGS {
 
-    public static void main(String[] args) throws IOException {
-	ScarabeiDesktop.deploy();
+	public static void main (final String[] args) throws IOException {
+		ScarabeiDesktop.deploy();
 
-	Isometry.installComponent(new RedIsometry());
-	// IsoMockPaletteGenerator
-	// .installComponent(new RedIsoMockPaletteGenerator());
-	IsoMockPaletteGenerator.installComponent(new RedIsoMockPaletteGenerator2());
+		Isometry.installComponent(new RedIsometry());
+		// IsoMockPaletteGenerator
+		// .installComponent(new RedIsoMockPaletteGenerator());
+		IsoMockPaletteGenerator.installComponent(new RedIsoMockPaletteGenerator2());
 
-	GeneratorParams specs = IsoMockPaletteGenerator.newIsoMockPaletteGeneratorParams();
+		final GeneratorParams specs = IsoMockPaletteGenerator.newIsoMockPaletteGeneratorParams();
 
-	File output_folder = LocalFileSystem.ApplicationHome().child("iso-output");
+		final File output_folder = LocalFileSystem.ApplicationHome().child("iso-output");
 
-	File mock_palette_folder = output_folder.child("wdgs");
+		final File mock_palette_folder = output_folder.child("wdgs");
 
-	specs.setOutputFolder(mock_palette_folder);
+		specs.setOutputFolder(mock_palette_folder);
 
-	specs.setPizzaPalette(WDGS_Pizza_Palette.PALETTE);
+		specs.setPizzaPalette(WDGS_Pizza_Palette.PALETTE);
 
-	specs.setFabricColor(WDGS_P18_Palette.GRASS, Colors.GREEN());
-	specs.setFabricColor(WDGS_P18_Palette.DIRT, Colors.BROWN());
-	specs.setFabricColor(WDGS_P18_Palette.WATER, Colors.BLUE());
-	specs.setFabricColor(WDGS_P18_Palette.SNOW, Colors.WHITE());
+		specs.setFabricColor(WDGS_P18_Palette.GRASS, Colors.GREEN());
+		specs.setFabricColor(WDGS_P18_Palette.DIRT, Colors.BROWN());
+		specs.setFabricColor(WDGS_P18_Palette.WATER, Colors.BLUE());
+		specs.setFabricColor(WDGS_P18_Palette.SNOW, Colors.WHITE());
 
-	specs.setPadding(64);
+		specs.setPadding(64);
 
-	IsoMockPaletteResult result = IsoMockPaletteGenerator.generate(specs);
+		final IsoMockPaletteResult result = IsoMockPaletteGenerator.generate(specs);
 
-	result.print();
+		result.print();
 
-	File bank_folder = LocalFileSystem.newFile("D:\\[DATA]\\[RED-ASSETS]\\TintoAssets\\tinto-assets")
-		.child("bank-florida");
-	bank_folder.makeFolder();
-	packScenes(result, bank_folder);
-	packRaster(result, bank_folder);
+		final File bank_folder = LocalFileSystem.newFile("D:\\[DATA]\\[RED-ASSETS]\\TintoAssets\\tinto-assets")
+			.child("bank-florida");
+		bank_folder.makeFolder();
+		packScenes(result, bank_folder);
+		packRaster(result, bank_folder);
 
-    }
-
-    private static void packScenes(IsoMockPaletteResult result, File bank_folder) throws IOException {
-	Scene2DPackage struct = result.getScene2DPackage();
-	String package_name = result.getNamespace().child(Scene2DPackage.SCENE2D_PACKAGE_FILE_EXTENSION).toString();
-	String file_name = package_name;
-
-	File package_folder = bank_folder.child(package_name);
-	File package_content_folder = package_folder.child(PackageDescriptor.PACKAGE_CONTENT_FOLDER);
-	package_content_folder.makeFolder();
-	File package_root_file = package_content_folder.child(file_name);
-
-	List<ID> packed = Collections.newList();
-
-	Collection<ID> dependencies = result.getAssetsUsed();
-
-	for (int i = 0; i < struct.structures.size(); i++) {
-	    SceneStructure structure = struct.structures.get(i);
-	    ID asset_id = Names.newID(structure.structure_name);
-	    packed.add(asset_id);
 	}
 
-	String data = Json.serializeToString(struct).toString();
-	package_root_file.writeString(data);
+	private static void packScenes (final IsoMockPaletteResult result, final File bank_folder) throws IOException {
+		final Scene2DPackage struct = result.getScene2DPackage();
+		final String package_name = result.getNamespace().child(Scene2DPackage.SCENE2D_PACKAGE_FILE_EXTENSION).toString();
+		final String file_name = package_name;
 
-	PackageUtils.producePackageDescriptor(package_folder, Scene2DPackage.SCENE2D_PACKAGE_FORMAT, "1.0", packed,
-		dependencies, file_name);
-    }
+		final File package_folder = bank_folder.child(package_name);
+		final File package_content_folder = package_folder.child(PackageDescriptor.PACKAGE_CONTENT_FOLDER);
+		package_content_folder.makeFolder();
+		final File package_root_file = package_content_folder.child(file_name);
 
-    private static void packRaster(IsoMockPaletteResult result, File bank_folder) throws IOException {
+		final List<ID> packed = Collections.newList();
 
-	File raster = result.getRasterOutputFolder();
-	// L.d("raster", raster);
+		final Collection<ID> dependencies = result.getAssetsUsed();
 
-	TexturePackingSpecs specs = TexturePacker.newPackingSpecs();
-	String package_name = result.getNamespace().child("raster").toString();
-	specs.setOutputAtlasFileName(package_name);
+		for (int i = 0; i < struct.structures.size(); i++) {
+			final SceneStructure structure = struct.structures.get(i);
+			final ID asset_id = Names.newID(structure.structure_name);
+			packed.add(asset_id);
+		}
 
-	File package_folder = bank_folder.child(package_name);
-	// L.d("package_folder", package_folder);
-	// Sys.exit();
+		final String data = Json.serializeToString(struct).toString();
+		package_root_file.writeString(data);
 
-	File package_content_folder = package_folder.child(PackageDescriptor.PACKAGE_CONTENT_FOLDER);
-	package_content_folder.makeFolder();
-	specs.setOutputAtlasFolder(package_content_folder);
-	specs.setInputRasterFolder(raster);
+		PackageUtils.producePackageDescriptor(package_folder, Scene2DPackage.SCENE2D_PACKAGE_FORMAT, "1.0", packed, dependencies,
+			file_name);
+	}
 
-	Packer packer = TexturePacker.newPacker(specs);
+	private static void packRaster (final IsoMockPaletteResult result, final File bank_folder) throws IOException {
 
-	AtlasPackingResult atlas_result = packer.pack();
+		final File raster = result.getRasterOutputFolder();
+		// L.d("raster", raster);
 
-	atlas_result.print();
+		final TexturePackingSpecs specs = TexturePacker.newPackingSpecs();
+		final String package_name = result.getNamespace().child("raster").toString();
+		specs.setOutputAtlasFileName(package_name);
 
-	File altas_file = atlas_result.getAtlasOutputFile();
-	String atlas_name = altas_file.getName();
+		final File package_folder = bank_folder.child(package_name);
+		// L.d("package_folder", package_folder);
+		// Sys.exit();
 
-	Collection<ID> packed = atlas_result.listPackedAssets();
-	packed.print("packed");
+		final File package_content_folder = package_folder.child(PackageDescriptor.PACKAGE_CONTENT_FOLDER);
+		package_content_folder.makeFolder();
+		specs.setOutputAtlasFolder(package_content_folder);
+		specs.setInputRasterFolder(raster);
 
-	PackageUtils.producePackageDescriptor(package_folder, StandardPackageFormats.libGDX.Atlas, "1.0", packed,
-		Collections.newList(), atlas_name);
+		final Packer packer = TexturePacker.newPacker(specs);
 
-    }
+		final AtlasPackingResult atlas_result = packer.pack();
+
+		atlas_result.print();
+
+		final File altas_file = atlas_result.getAtlasOutputFile();
+		final String atlas_name = altas_file.getName();
+
+		final Collection<ID> packed = atlas_result.listPackedAssets();
+		packed.print("packed");
+
+		PackageUtils.producePackageDescriptor(package_folder, StandardPackageFormats.libGDX.Atlas, "1.0", packed,
+			Collections.newList(), atlas_name);
+
+	}
 
 }

@@ -29,7 +29,7 @@
 	<classpathentry combineaccessrules="false" kind="src" path="/jfixby-util-pizza-api"/>
 	<classpathentry combineaccessrules="false" kind="src" path="/jfixby-util-pizza-red"/>
 	<classpathentry combineaccessrules="false" kind="src" path="/red-triplane-api"/>
-	<classpathentry combineaccessrules="false" kind="src" path="/red-triplane-scene2d-api"/>
+	<classpathentry combineaccessrules="false" kind="src" path="/red-triplane-api-scene2d"/>
 	<classpathentry combineaccessrules="false" kind="src" path="/rana-api"/>
 	<classpathentry kind="output" path="bin"/>
 </classpath>

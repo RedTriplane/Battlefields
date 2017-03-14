@@ -1,3 +1,4 @@
+
 package com.jfixby.util.iso.red;
 
 import java.util.Iterator;
@@ -6,63 +7,61 @@ import com.jfixby.scarabei.api.angles.Angles;
 import com.jfixby.scarabei.api.collections.Collection;
 import com.jfixby.scarabei.api.collections.EditableCollection;
 import com.jfixby.scarabei.api.debug.Debug;
-import com.jfixby.scarabei.api.floatn.ReadOnlyFloat2;
-import com.jfixby.scarabei.api.floatn.ReadOnlyFloat3;
 import com.jfixby.scarabei.api.floatn.Float2;
 import com.jfixby.scarabei.api.floatn.Float3;
+import com.jfixby.scarabei.api.floatn.ReadOnlyFloat2;
+import com.jfixby.scarabei.api.floatn.ReadOnlyFloat3;
 import com.jfixby.scarabei.api.geometry.Geometry;
 import com.jfixby.scarabei.api.math.CustomAngle;
-import com.jfixby.scarabei.api.transform.RectangleTransform;
-import com.jfixby.scarabei.api.transform.Transform2D;
 import com.jfixby.util.iso.api.IsoTransform;
 import com.jfixby.util.iso.api.IsoTransformSpecs;
 
 public class RedIsoTransform implements IsoTransform {
 
-	private double h_scale;
-	private double v_scale;
-	private double off_x;
-	private double off_y;
-	private double z_project;
-	private CustomAngle rot;
-	private CustomAngle skew_x;
-	private CustomAngle skew_y;
-	private RectangleTransform prjector;
-	private double pixelsToGameMeter;
+	private final double h_scale;
+	private final double v_scale;
+	private final double off_x;
+	private final double off_y;
+	private final double z_project;
+	private final CustomAngle rot;
+	private final CustomAngle skew_x;
+	private final CustomAngle skew_y;
+	private final RedIsoRectangleTransform prjector;
+	private final double pixelsToGameMeter;
 
-	public RedIsoTransform(IsoTransformSpecs specs) {
-		h_scale = specs.getHorizontalScale();
-		v_scale = specs.getVerticalScale();
-		off_x = specs.getOffsetX();
-		off_y = specs.getOffsetY();
-		rot = Angles.newAngle(specs.getRotation());
-		z_project = specs.getZProjectionValue();
-		skew_x = Angles.newAngle(specs.getHorizontalShiftAngle());
-		skew_y = Angles.newAngle(specs.getVerticalShiftAngle());
-		prjector = Transform2D.newRectangleTransform();
+	public RedIsoTransform (final IsoTransformSpecs specs) {
+		this.h_scale = specs.getHorizontalScale();
+		this.v_scale = specs.getVerticalScale();
+		this.off_x = specs.getOffsetX();
+		this.off_y = specs.getOffsetY();
+		this.rot = Angles.newAngle(specs.getRotation());
+		this.z_project = specs.getZProjectionValue();
+		this.skew_x = Angles.newAngle(specs.getHorizontalShiftAngle());
+		this.skew_y = Angles.newAngle(specs.getVerticalShiftAngle());
+		this.prjector = new RedIsoRectangleTransform();
 
-		pixelsToGameMeter = specs.getPixelsToGameMeter();
+		this.pixelsToGameMeter = specs.getPixelsToGameMeter();
 
-		prjector.setPosition(off_x, off_y);
-		prjector.setRotation(rot);
-		prjector.setSize(1, 1);
-		prjector.setSkew(skew_x.toRadians(), skew_y.toRadians());
-		prjector.setScale(h_scale, v_scale);
+		this.prjector.setPosition(this.off_x, this.off_y);
+		this.prjector.setRotation(this.rot);
+		this.prjector.setSize(1, 1);
+		this.prjector.setSkew(this.skew_x, this.skew_y);
+		this.prjector.setScale(this.h_scale, this.v_scale);
 
 	}
 
 	@Override
-	public void project3Dto2D(ReadOnlyFloat3 input, Float2 output) {
+	public void project3Dto2D (final ReadOnlyFloat3 input, final Float2 output) {
 		Debug.checkNull("input", input);
 		Debug.checkNull("output", output);
 		output.setX(input.getX());
 		output.setY(input.getY());
-		prjector.toAbsolute(output);
-		output.setY(output.getY() - input.getZ() * z_project);
+		this.prjector.project(output);
+		output.setY(output.getY() - input.getZ() * this.z_project);
 	}
 
 	@Override
-	public void project3Dto2D(Collection<? extends ReadOnlyFloat3> input, EditableCollection<Float2> output) {
+	public void project3Dto2D (final Collection<? extends ReadOnlyFloat3> input, final EditableCollection<Float2> output) {
 		Debug.checkNull("input", input);
 		Debug.checkNull("output", output);
 		Geometry.fillUpFloat2(output, input.size());
@@ -73,34 +72,34 @@ public class RedIsoTransform implements IsoTransform {
 	}
 
 	@Override
-	public double getPixelsToGameMeter() {
-		return pixelsToGameMeter;
+	public double getPixelsToGameMeter () {
+		return this.pixelsToGameMeter;
 	}
 
 	@Override
-	public void project2DtoPixels(Float2 tmp) {
+	public void project2DtoPixels (final Float2 tmp) {
 		tmp.setX(tmp.getX() * this.pixelsToGameMeter);
 		tmp.setY(tmp.getY() * this.pixelsToGameMeter);
 	}
 
 	@Override
-	public void project2DtoPixels(Collection<Float2> tmp) {
+	public void project2DtoPixels (final Collection<Float2> tmp) {
 		Debug.checkNull("tmp", tmp);
-		for (Iterator<Float2> i = tmp.iterator(); i.hasNext();) {
+		for (final Iterator<Float2> i = tmp.iterator(); i.hasNext();) {
 			this.project2DtoPixels(i.next());
 		}
 	}
 
 	@Override
-	public void unprojectPixelsTo2D(Float2 tmp) {
+	public void unprojectPixelsTo2D (final Float2 tmp) {
 		tmp.setX(tmp.getX() / this.pixelsToGameMeter);
 		tmp.setY(tmp.getY() / this.pixelsToGameMeter);
 	}
 
 	@Override
-	public void unprojectPixelsTo2D(Collection<Float2> tmp) {
+	public void unprojectPixelsTo2D (final Collection<Float2> tmp) {
 		Debug.checkNull("tmp", tmp);
-		for (Iterator<Float2> i = tmp.iterator(); i.hasNext();) {
+		for (final Iterator<Float2> i = tmp.iterator(); i.hasNext();) {
 			this.unprojectPixelsTo2D(i.next());
 		}
 	}
@@ -108,19 +107,19 @@ public class RedIsoTransform implements IsoTransform {
 	final Float2 tmp_vec = Geometry.newFloat2();
 
 	@Override
-	public void unproject2Dto3D(ReadOnlyFloat2 input_2d, double missing_default_z, Float3 output_3d) {
+	public void unproject2Dto3D (final ReadOnlyFloat2 input_2d, final double missing_default_z, final Float3 output_3d) {
 		Debug.checkNull("input_2d", input_2d);
 		Debug.checkNull("output_3d", output_3d);
-		tmp_vec.set(input_2d);
-		prjector.toRelative(tmp_vec);
-		output_3d.setX(tmp_vec.getX());
-		output_3d.setY(tmp_vec.getY());
+		this.tmp_vec.set(input_2d);
+		this.prjector.unProject(this.tmp_vec);
+		output_3d.setX(this.tmp_vec.getX());
+		output_3d.setY(this.tmp_vec.getY());
 		output_3d.setZ(missing_default_z);
 	}
 
 	@Override
-	public void unproject2Dto3D(Collection<ReadOnlyFloat2> input_2d, double missing_default_z,
-			EditableCollection<Float3> output_3d) {
+	public void unproject2Dto3D (final Collection<ReadOnlyFloat2> input_2d, final double missing_default_z,
+		final EditableCollection<Float3> output_3d) {
 		Debug.checkNull("input_2d", input_2d);
 		Debug.checkNull("output_3d", output_3d);
 

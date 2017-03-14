@@ -1,3 +1,4 @@
+
 package com.jfixby.util.iso.red;
 
 import com.jfixby.scarabei.api.angles.Angles;
@@ -11,21 +12,21 @@ public class RedIsometry implements ISOComponent {
 	private IsoTransform FALLOUT;
 
 	@Override
-	public IsoTransformSpecs newTransformSpecs() {
+	public IsoTransformSpecs newTransformSpecs () {
 		return new RedIsoTransformSpecs();
 	}
 
 	@Override
-	public IsoTransform newTransform(IsoTransformSpecs specs) {
+	public IsoTransform newTransform (final IsoTransformSpecs specs) {
 		return new RedIsoTransform(specs);
 	}
 
 	@Override
-	public IsoTransform getFallout(double pixelsToGameMeter) {
-		if (FALLOUT == null) {
-			IsoTransformSpecs specs = newTransformSpecs();
+	public IsoTransform getFallout (final double pixelsToGameMeter) {
+		if (this.FALLOUT == null) {
+			final IsoTransformSpecs specs = this.newTransformSpecs();
 
-			boolean ORTO = !true;
+			final boolean ORTO = !true;
 			double m1 = 0;
 			double m2 = 0;
 			if (ORTO) {
@@ -38,18 +39,17 @@ public class RedIsometry implements ISOComponent {
 
 			specs.setRotation(Angles.newAngle(FloatMath.toRadians(m1 * -15)));
 
-			specs.setHorizontalShiftAngle(Angles.newAngle(FloatMath
-					.toRadians(m1 * 38)));
+			specs.setHorizontalShiftAngle(Angles.newAngle(FloatMath.toRadians(m1 * 38)));
 			specs.setVerticalShiftAngle(Angles.newAngle());
 
 			specs.setHorizontalScale(1);
 			specs.setPixelsToGameMeter(pixelsToGameMeter);
 			specs.setVerticalScale((FloatMath.cos(FloatMath.toRadians(38)) * m1 + m2 * 1));
 
-			FALLOUT = newTransform(specs);
+			this.FALLOUT = this.newTransform(specs);
 
 		}
-		return FALLOUT;
+		return this.FALLOUT;
 	}
 
 }

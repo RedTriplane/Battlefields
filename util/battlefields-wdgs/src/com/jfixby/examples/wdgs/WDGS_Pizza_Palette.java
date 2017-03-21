@@ -1,3 +1,4 @@
+
 package com.jfixby.examples.wdgs;
 
 import com.jfixby.util.iso.api.IsoTransform;
@@ -10,18 +11,19 @@ import com.jfixby.utl.pizza.api.PizzaPaletteSpecs;
 
 public class WDGS_Pizza_Palette {
 
+	public static final double PIXELS_PER_METER = 260;
+
 	static {
-		P18TerrainPalette p18_terrain_palette = WDGS_P18Terrain_Palette.P18_TERRAIN_PALETTE;
+		final P18TerrainPalette p18_terrain_palette = WDGS_P18Terrain_Palette.P18_TERRAIN_PALETTE;
 
-		PizzaPaletteFactory palette_factory = Pizza.invoke()
-				.getPizzaPaletteFactory();
+		final PizzaPaletteFactory palette_factory = Pizza.invoke().getPizzaPaletteFactory();
 
-		PizzaPaletteSpecs specs = palette_factory.newPizzaPaletteSpecs();
+		final PizzaPaletteSpecs specs = palette_factory.newPizzaPaletteSpecs();
 		specs.setP18TerrainPalette(p18_terrain_palette);
-		IsoTransform fallout_iso = Isometry.getFallout(260);
+		final IsoTransform fallout_iso = Isometry.getFallout(PIXELS_PER_METER);
 		specs.setIsoTransform(fallout_iso);
 
-		PizzaPalette pizza_palette = palette_factory.newPizzaPalette(specs);
+		final PizzaPalette pizza_palette = palette_factory.newPizzaPalette(specs);
 		PALETTE = pizza_palette;
 	}
 

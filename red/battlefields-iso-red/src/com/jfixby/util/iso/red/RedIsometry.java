@@ -33,7 +33,7 @@ public class RedIsometry implements ISOComponent {
 				m1 = 0;
 				m2 = 1;
 			} else {
-				m1 = 1;
+				m1 = 01;
 				m2 = 0;
 			}
 

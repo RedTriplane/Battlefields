@@ -1,7 +1,7 @@
 
 package com.jfixby.util.patch18.red.Log;
 
-import java.util.Vector;
+import java.util.ArrayList;
 
 import com.jfixby.r3.ext.api.patch18.Patch18;
 import com.jfixby.r3.ext.api.patch18.palette.Fabric;
@@ -16,7 +16,7 @@ public class Printer {
 
 	static String L = "\n";
 
-	public static String toString (BoolFunction bool_field, int w, int h) {
+	public static String toString (final BoolFunction bool_field, final int w, final int h) {
 		String result = L;
 		for (int j = -1; j < h + 1; j++) {
 			String line = "";
@@ -35,7 +35,7 @@ public class Printer {
 		return result;
 	}
 
-	public static String toString (WallFunction field, int w, int h) {
+	public static String toString (final WallFunction field, final int w, final int h) {
 		String result = L;
 		for (int j = -1; j < h + 1; j++) {
 			String line = "";
@@ -44,7 +44,7 @@ public class Printer {
 				// if (bool_field.getValue(i, j).toBool()) {
 				// char_value = 'X';
 				// }
-				Patch18 value = field.getValue(i, j).value;
+				final Patch18 value = field.getValue(i, j).value;
 
 				String char_value = " ? ";
 				if (value != null) {
@@ -63,10 +63,10 @@ public class Printer {
 	}
 
 	private static final String ASCI_palette = "@#$%&8BMW*mwqpdbkhaoQ0OZXYUJCLtfjzxnuvcr[]{}1()|/?Il!i><+_~-;,. ";
-	static final Vector<String> palette = new Vector<String>();
+	static final ArrayList<String> palette = new ArrayList<String>();
 	static float delta;
 	static {
-		boolean use_grayscale_symbols = true;
+		final boolean use_grayscale_symbols = true;
 		if (use_grayscale_symbols) {
 			// String color0 = "█";
 			// String color1 = "▓";
@@ -99,17 +99,17 @@ public class Printer {
 
 	}
 
-	private static String palette (Color color) {
+	private static String palette (final Color color) {
 		return palette(color, color);
 	}
 
-	private static String palette (Color a, Color b) {
-		float gray = (a.gray() + b.gray()) / 2f;
+	private static String palette (final Color a, final Color b) {
+		final float gray = (a.gray() + b.gray()) / 2f;
 		return palette(gray);
 	}
 
-	private static String palette (float gray_a, float gray_b) {
-		float gray = (gray_a + gray_b) / 2f;
+	private static String palette (final float gray_a, final float gray_b) {
+		final float gray = (gray_a + gray_b) / 2f;
 		return palette(gray);
 	}
 
@@ -122,12 +122,12 @@ public class Printer {
 	// return palette.get(index);
 	// }
 
-	private static String palette (int index_a) {
+	private static String palette (final int index_a) {
 		// int index = index_a;
 		return palette.get(index_a + 1);
 	}
 
-	private static String palette (float gray) {
+	private static String palette (final float gray) {
 		int index = (int)((gray) * (1f / delta));
 		if (index == palette.size()) {
 			index--;
@@ -135,11 +135,12 @@ public class Printer {
 		if (index < 0) {
 			index = 0;
 		}
-		String val = palette.get(index);
+		final String val = palette.get(index);
 		return val;
 	}
 
-	public static String toString (WallsComposition walls_composition, long w, long h, long x, long y) {
+	public static String toString (final WallsComposition walls_composition, final long w, final long h, final long x,
+		final long y) {
 		String result = L;
 
 		// Log.d("delta", delta);
@@ -148,11 +149,11 @@ public class Printer {
 			String line = "";
 			for (long i = -1; i < w + 1; i++) {
 
-				ComposedTile tile = walls_composition.getValue(i + x, j + y);
+				final ComposedTile tile = walls_composition.getValue(i + x, j + y);
 
-				Patch18 shape = tile.getShape();
+				final Patch18 shape = tile.getShape();
 
-				String val = shape.getChar();
+				final String val = shape.getChar();
 
 				line = line + "" + val + "";
 
@@ -162,21 +163,22 @@ public class Printer {
 		return result;
 	}
 
-	public static String toStringArea (WallsComposition walls_composition, FabricsList mcolors, long w, long h, long x, long y) {
+	public static String toStringArea (final WallsComposition walls_composition, final FabricsList mcolors, final long w,
+		final long h, final long x, final long y) {
 		String result = L;
 
 		for (long j = -1 + y; j < h + 1; j++) {
 			String line = "";
 			for (long i = -1 + x; i < w + 1; i++) {
 
-				ComposedTile tile = walls_composition.getValue(i, j);
+				final ComposedTile tile = walls_composition.getValue(i, j);
 
 				//
-				Fabric material_a = tile.getUpperFabric();
+				final Fabric material_a = tile.getUpperFabric();
 
-				Fabric material_b = tile.getLowerFabric();
+				final Fabric material_b = tile.getLowerFabric();
 
-				Patch18 shape = tile.getShape();
+				final Patch18 shape = tile.getShape();
 				String val;
 				if (shape == Patch18.Blocked) {
 					val = palette(mcolors.indexOf(material_a)) + palette(mcolors.indexOf(material_a));
@@ -195,22 +197,23 @@ public class Printer {
 		return result;
 	}
 
-	public static String toString (WallsComposition walls_composition, MaterialGRBColors mcolors, long w, long h, long x, long y) {
+	public static String toString (final WallsComposition walls_composition, final MaterialGRBColors mcolors, final long w,
+		final long h, final long x, final long y) {
 		String result = L;
 
 		for (long j = y - 1; j < h + 1; j++) {
 			String line = "";
 			for (long i = x - 1; i < w + 1; i++) {
 
-				ComposedTile tile = walls_composition.getValue(i, j);
+				final ComposedTile tile = walls_composition.getValue(i, j);
 
 				//
-				Fabric material_a = tile.getUpperFabric();
-				float color_a = mcolors.colorOf(material_a).gray();
-				Fabric material_b = tile.getLowerFabric();
-				float color_b = mcolors.colorOf(material_b).gray();
+				final Fabric material_a = tile.getUpperFabric();
+				final float color_a = mcolors.colorOf(material_a).gray();
+				final Fabric material_b = tile.getLowerFabric();
+				final float color_b = mcolors.colorOf(material_b).gray();
 
-				Patch18 shape = tile.getShape();
+				final Patch18 shape = tile.getShape();
 				String val;
 				if (shape == Patch18.Blocked) {
 					val = palette(color_a);

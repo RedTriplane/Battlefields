@@ -1,0 +1,7 @@
+dependencies {
+             compile project(":battlefields-p18-api")
+             compile project(":battlefields-terrain-p18-api")
+             compile project(":battlefields-pizza-api")
+             
+
+}

@@ -1,0 +1,4 @@
+dependencies {
+             compile project(":battlefields-iso-api")
+
+}

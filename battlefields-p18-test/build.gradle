@@ -1,0 +1,5 @@
+dependencies {
+             compile project(":battlefields-p18-red")
+             compile project(":battlefields-wdgs")
+
+}

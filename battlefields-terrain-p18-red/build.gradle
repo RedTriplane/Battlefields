@@ -1,0 +1,3 @@
+dependencies {
+             compile project(":battlefields-terrain-p18-api")
+}

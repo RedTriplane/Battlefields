@@ -11,10 +11,10 @@ buildscript {
 }
 
 ext {
-        scarabeiVersion = "1.4.0"
-        gdxVersion = "1.9.6"
-        ranaVersion = "12f77ec6fa"
-        r3Version = "81c8acd940"
+        scarabeiVersion = "a63e27032c"
+        //gdxVersion = "1.9.6"
+        //ranaVersion = "12f77ec6fa"
+        //r3Version = "81c8acd940"
 
 }
 

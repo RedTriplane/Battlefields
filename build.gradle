@@ -11,10 +11,7 @@ buildscript {
 }
 
 ext {
-        scarabeiVersion = "a63e27032c"
-        //gdxVersion = "1.9.6"
-        //ranaVersion = "12f77ec6fa"
-       
+        scarabeiVersion = "1.5.1"
 
 }
 
@@ -34,10 +31,7 @@ sourceCompatibility = 1.6
 [compileJava, compileTestJava]*.options*.encoding = 'UTF-8'
 
 
-dependencies {
-    compile "com.github.Scarabei.Scarabei:scarabei-api:$scarabeiVersion"
-    
-}
+
 
 sourceSets {
     main {

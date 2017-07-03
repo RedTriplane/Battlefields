@@ -1,7 +1,8 @@
-dependencies {
-             compile project(":battlefields-p18-api")
-             compile project(":battlefields-terrain-p18-api")
-             compile project(":battlefields-pizza-api")
-             
+sourceCompatibility = 1.6
 
+dependencies {
+    compile "com.github.Scarabei.ScarabeiAPI:scarabei-api:$scarabeiAPILevel"
+
+    compile project(":battlefields-pizza-api")
 }
+

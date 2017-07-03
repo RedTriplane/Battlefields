@@ -1,4 +1,0 @@
-
-dependencies {
-             compile project(":battlefields-pizza-api")
-}

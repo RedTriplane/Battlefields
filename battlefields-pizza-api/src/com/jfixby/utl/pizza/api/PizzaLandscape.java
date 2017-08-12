@@ -1,17 +1,18 @@
+
 package com.jfixby.utl.pizza.api;
 
 import com.jfixby.scarabei.api.collections.Collection;
 
 public interface PizzaLandscape {
 
-	PizzaBrush getBrush();
+	PizzaBrush getBrush ();
 
-	void setLandscapeListener(PizzaLandscapeListener listener);
+	void setLandscapeListener (PizzaLandscapeListener listener);
 
-	LandscapeActiveArea getActiveArea();
+	LandscapeActiveArea getActiveArea ();
 
-	void print();
+// void print();
 
-	Collection<PizzaTile> listAllBlocks();
+	Collection<PizzaTile> listAllBlocks ();
 
 }

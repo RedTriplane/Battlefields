@@ -5,3 +5,13 @@ include "battlefields-pizza-api"
 include "battlefields-terrain-api"
 include "battlefields-terrain-p18-api"
 include "battlefields-wdgs"
+
+
+include "battlefields-iso-red"
+include "battlefields-maze-red"
+include "battlefields-p18-red"
+include "battlefields-pizza-red"
+
+include "battlefields-terrain-red"
+include "battlefields-terrain-p18-red"
+

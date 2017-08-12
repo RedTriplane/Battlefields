@@ -1,19 +1,20 @@
+
 package com.jfixby.r3.ext.api.patch18.palette;
 
 public interface FabricsList {
 
-	int size();
+	int size ();
 
-	Fabric getFabric(int i);
+	Fabric getFabric (int i);
 
-	int indexOf(Fabric material_a);
+	int indexOf (Fabric material_a);
 
-	Fabric findFabricByName(String string);
+	Fabric findFabricByName (String string);
 
-	Fabric getLast();
+	Fabric getLast ();
 
-	void print(String tag);
+// void print(String tag);
 
-	boolean contains(Fabric fabric);
+	boolean contains (Fabric fabric);
 
 }

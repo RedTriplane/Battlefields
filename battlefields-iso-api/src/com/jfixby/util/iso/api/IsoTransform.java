@@ -2,10 +2,10 @@ package com.jfixby.util.iso.api;
 
 import com.jfixby.scarabei.api.collections.Collection;
 import com.jfixby.scarabei.api.collections.EditableCollection;
-import com.jfixby.scarabei.api.floatn.ReadOnlyFloat2;
-import com.jfixby.scarabei.api.floatn.ReadOnlyFloat3;
 import com.jfixby.scarabei.api.floatn.Float2;
 import com.jfixby.scarabei.api.floatn.Float3;
+import com.jfixby.scarabei.api.floatn.ReadOnlyFloat2;
+import com.jfixby.scarabei.api.floatn.ReadOnlyFloat3;
 
 public interface IsoTransform {
 

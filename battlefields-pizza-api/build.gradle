@@ -2,7 +2,7 @@ sourceCompatibility = 1.6
 
 dependencies {
 
-    compile "com.github.Scarabei.Scarabei:scarabei-api:$scarabeiAPILevel"
+   // compile "com.github.Scarabei.Scarabei:scarabei-api:$scarabeiAPILevel"
     
     
      compile project(":battlefields-p18-api")

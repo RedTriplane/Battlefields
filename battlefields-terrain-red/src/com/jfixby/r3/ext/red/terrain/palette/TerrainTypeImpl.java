@@ -1,10 +1,10 @@
 
 package com.jfixby.r3.ext.red.terrain.palette;
 
-import com.jfixby.scarabei.api.assets.ID;
 import com.jfixby.scarabei.api.debug.Debug;
 import com.jfixby.scarabei.api.gamedev.GameMeter;
 import com.jfixby.scarabei.api.gamedev.GameMeterFixed;
+import com.jfixby.scarabei.api.names.ID;
 import com.jfixby.util.terain.test.api.palette.TerrainPaletteFactory;
 import com.jfixby.util.terain.test.api.palette.TerrainType;
 import com.jfixby.util.terain.test.api.palette.TerrainTypeSpecs;

@@ -1,7 +1,7 @@
 package com.jfixby.examples.wdgs;
 
 import com.jfixby.r3.ext.api.patch18.P18Palette;
-import com.jfixby.scarabei.api.assets.Names;
+import com.jfixby.scarabei.api.names.Names;
 import com.jfixby.util.p18t.api.P18Terrain;
 import com.jfixby.util.p18t.api.P18TerrainPalette;
 import com.jfixby.util.p18t.api.P18TerrainPaletteFactory;

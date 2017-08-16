@@ -2,9 +2,9 @@ package com.jfixby.util.p18t.api;
 
 import com.jfixby.r3.ext.api.patch18.P18Palette;
 import com.jfixby.r3.ext.api.patch18.palette.FabricsRelation;
-import com.jfixby.scarabei.api.assets.ID;
 import com.jfixby.scarabei.api.collections.Mapping;
 import com.jfixby.scarabei.api.floatn.Float2;
+import com.jfixby.scarabei.api.names.ID;
 
 public interface P18TerrainPaletteSpecs {
 

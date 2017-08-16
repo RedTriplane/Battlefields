@@ -1,8 +1,8 @@
 
 package com.jfixby.r3.ext.red.terrain.palette;
 
-import com.jfixby.scarabei.api.assets.ID;
 import com.jfixby.scarabei.api.gamedev.GameMeter;
+import com.jfixby.scarabei.api.names.ID;
 import com.jfixby.util.terain.test.api.palette.TerrainTypeSpecs;
 
 public class TerrainTypeSpecsImpl implements TerrainTypeSpecs {

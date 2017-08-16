@@ -1,10 +1,10 @@
 
 package com.jfixby.r3.ext.red.terrain.palette;
 
-import com.jfixby.scarabei.api.assets.ID;
-import com.jfixby.scarabei.api.assets.Names;
-import com.jfixby.scarabei.api.assets.NamespaceRegistry;
 import com.jfixby.scarabei.api.collections.Collection;
+import com.jfixby.scarabei.api.names.ID;
+import com.jfixby.scarabei.api.names.Names;
+import com.jfixby.scarabei.api.names.NamespaceRegistry;
 import com.jfixby.util.terain.test.api.palette.TerrainType;
 
 public class TerrainTypeRegister {

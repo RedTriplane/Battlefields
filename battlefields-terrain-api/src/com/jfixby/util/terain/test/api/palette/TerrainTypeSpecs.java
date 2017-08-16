@@ -1,7 +1,7 @@
 package com.jfixby.util.terain.test.api.palette;
 
-import com.jfixby.scarabei.api.assets.ID;
 import com.jfixby.scarabei.api.gamedev.GameMeter;
+import com.jfixby.scarabei.api.names.ID;
 
 public interface TerrainTypeSpecs {
 
